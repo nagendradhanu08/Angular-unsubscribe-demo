@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="mt-2">Angular unsubscribe example</h1>
+  <!-- <p>Close cards, open console and click on "To upper case" to see memory leak problem.</p> -->
+  <div class="row mt-4">
+      <form class="form-inline">
+        <div class="form-group mx-sm-3">
+          <input type="text" class="form-control" #field id="message" placeholder="Message">
+        </div>
+        <div class="form-group mx-sm-3">
+          <button type="button" class="btn btn-primary" (click)="toUpperCase(field.value)">To upper case</button>
+        </div>
+        <div class="form-group mx-sm-3">
+          <button type="button" class="btn btn-danger" (click)="closeCards()">Close cards</button>
+        </div>
+      </form>
+  </div>
+  <div class="row mt-5">
+    <app-card *ngIf="showCards"></app-card>
+    <app-unsubcribe-card *ngIf="showCards"></app-unsubcribe-card>
+    <app-take-until-card *ngIf="showCards"></app-take-until-card>
+    <app-async-pipe-card *ngIf="showCards"></app-async-pipe-card>
+    <app-take-while-card *ngIf="showCards"></app-take-while-card>
+  </div>
+</div>
